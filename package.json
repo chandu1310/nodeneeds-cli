@@ -1,0 +1,56 @@
+{
+  "name": "nodeneeds-cli",
+  "version": "2.0.1",
+  "description": "Generated with node-needs utility.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chandu1310/node-needs"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "lint": "echo Checking for lint issues && ./node_modules/.bin/eslint --fix ./test ./src",
+    "test": "echo Running Tests && ./node_modules/mocha/bin/mocha --require @babel/register --reporter spec",
+    "test:coverage": "./node_modules/.bin/nyc --check-coverage --lines 95 --functions 95 --branches 95 --reporter=html yarn test",
+    "build": "yarn lint && yarn test && echo Building code && rm -rf lib && babel src --out-dir lib --source-maps inline",
+    "release": "np"
+  },
+  "bin": {
+    "nodeneeds": "./lib/index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "node-needs",
+    "javascript",
+    "es6",
+    "travisci",
+    "nodeneeds-cli"
+  ],
+  "author": "chennac",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^6.0.0",
+    "eslint-config-eslint": "^5.0.1",
+    "mocha": "^6.1.4",
+    "np": "^5.0.3",
+    "nyc": "^14.1.1",
+    "proxyquire": "^2.1.1",
+    "sinon": "^7.3.2",
+    "sinon-chai": "^3.3.0"
+  },
+  "dependencies": {
+    "adm-zip": "^0.4.13",
+    "download": "^7.1.0",
+    "tmp-promise": "^2.0.2"
+  },
+  "np": {
+    "yarn": false
+  }
+}
