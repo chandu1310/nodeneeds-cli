@@ -1,14 +1,20 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=521ef73debaca93f402ccb6e87057ca85ac1513e369487a33124fe59348b408f
 language: node_js
 node_js:
-- '8'
+  - 8.2.1
+dist: trusty
 addons:
-  code_climate:
-    repo_token:
-      secure: mb+wb8drjhuIwnqeblbOWV0YVGQ5thkf/217jVcv0T1MvbFHSCoWIfLlP5j3JP/1wOlaTHLjr1vxuf2WvGvf8WDYt9EZzu+3h7fFbkwoeUGGscAjBbAUFQnvCrS9E3pJzQUInHRKdFIcTPIuV4np7aGaG7HEq8z1eaGbRJl4TbHo1wWIhTaKIs22AmusqeoCOmKERH6lTJRaFDq/4jfGX/icpemwJnsVu813oGjoZpQHXfU/OfoHItmOhvYJC1QgYb6E0PFRr6eciVhMwFu3LTfOApMjMH6/GxM8LUzmWo9f4rTUoPgCIOEwJvR3Dk/vsYtoDjLM9Mbr/+3ypWlTOFSDjx0X1qB68t8rstSoF21s/iL107PvJhIgo4odYALh7xcRdTBfhW0nbrJjRJhif7vXG1WIghp5yGVbSlozACyOtR4fopQuXh7Z1TBaq82CYqIfPjqEi0RukD4CXLxD9uURmN8XC9LSGMsyoSG6GHzQQoeA8doxkhDVhMpAE7DNkLEfMiAOzVqZ5FzgJz7VTqq/zHHlA387eWq98z2Q0Az2RkPdYWfV1yu7cd+5JyLYsUZKJD74g+8KugCmEqkki6b61FQhW4MUON/b1oHImzyqFCPuPU60nBHffKA32VbCkMHw3xjTgL6KiWp3hj7PgN5o3pFjvkqUSCUG4POQKDI=
-script: ./node_modules/.bin/nyc --reporter=lcov yarn test
-before_script:
-- npm install codeclimate-test-reporter nyc -g
+  chrome: stablebefore_script:
+  - yarn global add nyc
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - nyc --reporter=lcov yarn run unit
 after_script:
-- codeclimate-test-reporter < ./coverage/lcov.info
-cache: yarn
+  - ./cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT
+notifications:
+  email: false
     

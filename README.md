@@ -1,8 +1,8 @@
 # node-needs
-[![Build Status](https://travis-ci.org/chandu1310/node-needs.svg?branch=master)](https://travis-ci.org/chandu1310/node-needs)
-[![npm latest version](https://img.shields.io/npm/v/node-needs/latest.svg)](https://www.npmjs.com/package/node-needs)
-[![Maintainability](https://api.codeclimate.com/v1/badges/8efb6413bf142bb1f68f/maintainability)](https://codeclimate.com/github/chandu1310/node-needs/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/8efb6413bf142bb1f68f/test_coverage)](https://codeclimate.com/github/chandu1310/node-needs/test_coverage)
+[![Build Status](https://travis-ci.org/chandu1310/nodeneeds-cli.svg?branch=master)](https://travis-ci.org/chandu1310/nodeneeds-cli)
+[![npm latest version](https://img.shields.io/npm/v/nodeneeds-cli/latest.svg)](https://www.npmjs.com/package/nodeneeds-cli)
+[![Maintainability](https://api.codeclimate.com/v1/badges/fad88d02dc9d734289b8/maintainability)](https://codeclimate.com/github/chandu1310/nodeneeds-cli/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/fad88d02dc9d734289b8/test_coverage)](https://codeclimate.com/github/chandu1310/nodeneeds-cli/test_coverage)
 
 node-needs is an out of the box node module which can be used to get started on building a NPM package with all the
 best practicies. The features supported include:
