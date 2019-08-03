@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { startCli } from './src/cli';
+const { startCli } = require('./lib/cli');
 
 console.log('Running to nodeneeds-cli utility');
 startCli();

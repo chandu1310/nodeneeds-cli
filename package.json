@@ -18,7 +18,7 @@
     "release": "np"
   },
   "bin": {
-    "nodeneeds": "./lib/index.js"
+    "nodeneeds": "index.js"
   },
   "keywords": [
     "nodejs",
