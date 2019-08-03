@@ -103,7 +103,7 @@ describe('extractFile', () => {
         // expect(fs.writeFile).to.have.been.calledWith(newFileName, JSON.stringify(
         //   {
         //     "name": "testapp",
-        //     "description": "Generated with node-needs utility.",
+        //     "description": "Generated with nodeneeds utility.",
         //     "author": "testuser",
         //     "keywords": [
         //       "testapp"
@@ -143,7 +143,7 @@ describe('extractFile', () => {
         // expect(fs.writeFile).to.have.been.calledWith(newFileName, JSON.stringify(
         //   {
         //     "name": "testapp",
-        //     "description": "Generated with node-needs utility.",
+        //     "description": "Generated with nodeneeds utility.",
         //     "author": "testuser",
         //     "keywords": [
         //       "testapp"

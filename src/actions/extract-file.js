@@ -6,7 +6,7 @@ const username = require("os").userInfo().username;
 const customizePackageJSON = (appname, packageJSON) => {
   const json = JSON.parse(packageJSON);
   json.name = appname.toLowerCase();
-  json.description = 'Generated with node-needs utility.';
+  json.description = 'Generated with nodeneeds utility.';
   json.keywords.push(appname);
   json.author = username;
 
