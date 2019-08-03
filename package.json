@@ -13,6 +13,7 @@
     "lint": "echo Checking for lint issues && ./node_modules/.bin/eslint --fix ./test ./src",
     "test": "echo Running Tests && ./node_modules/mocha/bin/mocha --require @babel/register --reporter spec",
     "test:coverage": "./node_modules/.bin/nyc --check-coverage --lines 95 --functions 95 --branches 95 --reporter=html yarn test",
+    "codeclimate:coverage": "/cc-test-reporter before-build && nyc --reporter=lcov npm run test && /cc-test-reporter after-build",
     "build": "yarn lint && yarn test && echo Building code && rm -rf lib && babel src --out-dir lib --source-maps inline",
     "release": "np"
   },
