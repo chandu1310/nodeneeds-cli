@@ -32,7 +32,12 @@ export const extractFile = (details) => {
               let fileContent;
               fileContent = fileName.endsWith('package.json') ? customizePackageJSON(appname, zip.readAsText(fileName)) : zip.readAsText(fileName);
               // console.log(`Creating new file: ${newFileName}`);
-              fs.writeFile(newFileName, fileContent);  
+              fs.writeFile(newFileName, fileContent, (error) => { 
+                  if(error) { 
+                    console.log(`Failed to write ${newFileName}\nReason: ${error}`); process.exit(1); 
+                  }
+                }
+              );  
             }
           }
         }
