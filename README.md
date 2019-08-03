@@ -10,6 +10,7 @@ best practicies. The features supported include:
 - Testing Framework (Chai, Mocha & Sinon.JS)
 - Code Management (Git, Conventional Commits, Changelog)
 - Continuos Integration Support (Travis CI)
+- Quality Analysis (Code Climate)
 
 
 ## Credits
