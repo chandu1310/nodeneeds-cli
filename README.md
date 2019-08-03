@@ -1,6 +1,6 @@
 # nodeneeds
 [![Build Status](https://travis-ci.org/chandu1310/nodeneeds-cli.svg?branch=master)](https://travis-ci.org/chandu1310/nodeneeds-cli)
-[![npm latest version](https://img.shields.io/npm/v/nodeneeds-cli/latest.svg)](https://www.npmjs.com/package/nodeneeds-cli)
+[![npm latest version](https://img.shields.io/npm/v/@chandu1310/nodeneeds/latest.svg)](https://www.npmjs.com/package/@chandu1310/nodeneeds)
 [![Maintainability](https://api.codeclimate.com/v1/badges/fad88d02dc9d734289b8/maintainability)](https://codeclimate.com/github/chandu1310/nodeneeds-cli/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/fad88d02dc9d734289b8/test_coverage)](https://codeclimate.com/github/chandu1310/nodeneeds-cli/test_coverage)
 
