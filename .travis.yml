@@ -1,17 +1,15 @@
 language: node_js
 node_js:
 - '8'
-dist: trusty
-addons:
-  chrome: stablebefore_script:
-  - yarn global add nyc
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-script:
-  - nyc --reporter=lcov yarn run unit
+cache:
+  directories:
+  - node_modules
+install:
+- npm install nyc -g
+before_script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- ./cc-test-reporter before-build
+script: ./node_modules/.bin/nyc --reporter=lcov yarn test
 after_script:
-  - ./cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT
-notifications:
-  email: false
-    
+- ./cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT
