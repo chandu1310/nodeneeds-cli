@@ -50,6 +50,7 @@
     "adm-zip": "^0.4.13",
     "download": "^7.1.0",
     "inquirer": "^6.5.0",
+    "npm-registry-client": "^8.6.0",
     "tmp-promise": "^2.0.2"
   },
   "np": {

@@ -1,3 +1,4 @@
+import * as CPV from '../src/actions/check-package-version';
 import * as ASK from '../src/actions/ask-details';
 import * as TMP from '../src/actions/create-temp-dir';
 import * as LTR from '../src/actions/get-latest-release';
@@ -8,6 +9,7 @@ import { startCli } from '../src/cli';
 describe('cli', () => {
   beforeEach(() => {
     console.log('Lets stub stuff');
+    sandbox.stub(CPV, 'checkPackageVersion').callsFake(() => { console.log('fake-check-package-version'); return Promise.resolve(0); });
     sandbox.stub(ASK, 'askDetails').callsFake(() => { console.log('fake-ask-details'); return Promise.resolve(1); });
     sandbox.stub(TMP, 'createTempDir').callsFake(() => { console.log('fake-create-temp-dir'); return Promise.resolve(2); });
     sandbox.stub(LTR, 'getLatestRelease').callsFake(() => { console.log('fake-get-latest-release'); return Promise.resolve(3); });
@@ -17,6 +19,7 @@ describe('cli', () => {
 
   it('calls actions as expected', () => {
     return startCli().then(() => {
+      expect(CPV.checkPackageVersion.called).to.be.true;
       expect(ASK.askDetails.called).to.be.true;
       expect(TMP.createTempDir.called).to.be.true;
       expect(LTR.getLatestRelease.called).to.be.true;
