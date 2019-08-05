@@ -21,8 +21,5 @@ const questions = [
   }
 ];
 
-export const askDetails = () => {
-  console.log('Lets begin!');    
-  return inquirer.prompt(questions); 
-}
+export const askDetails = () => inquirer.prompt(questions);
 
