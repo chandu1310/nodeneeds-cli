@@ -14,11 +14,52 @@ The features supported include:
 - Continuos Integration Support (Travis CI)
 - Quality Analysis (Code Climate)
 
-# Usage
-Install nodeneeds cli as a global command and invoke it as "nodeneeds".
-It will guide through the process of selecting the type of node app you want to create and other details. 
-Finally it bootstaps a new app for you in the current directory with the given name. 
-Once created you have a bunch of commands that you can run to test, manage and publish/deploy the package.
+# Getting Started
+
+With all that background in mind, lets get started and create your very own npm package and publish it to npmjs.org
+
+### Required:
+You must have installed nodejs on you machine, else [here](https://howtonode.org/how-to-install-nodejs) is the detailed instruction on how to do it.
+
+### Steps:
+
+After you have installed node and npm on your machine, go ahead and install the nodeneeds tool by running the following command 
+
+`npm install nodeneeds -g`
+
+This install the nodeneeds tool as a command that you can invoke at your shell prompt.
+
+For now let us try to create a default NPM package and publish it.
+
+Navigate to any directory of your choice (referring it as workspace from now on) eg. your home directory and run 
+
+`nodeneeds`
+
+This starts the tool and asks a bunch of questions and usually has some default answers too.
+
+`nodeneeds`
+`? What is the name of the node module? (abcd-1565303009156)`
+
+Provide the name of the node module you are creating. Defaults to username-timestamp
+
+`? How do you intend to use it? (Use arrow keys)`
+
+`❯ NPM Package`
+
+  `Lambda based Rest Service`
+
+  `ReactJS App Lerna Mono Repo`
+
+Select the option which lets us create an npm package. Rest of the options are not yet available and still create the default npm package.
+
+That is all. It should run through fetching the latest nodeneeds definition if needed and bootstrap a nodejs package for you with the given name. It cleans up any temp files created at the end.
+
+`Fetching latest nodeneeds`
+
+`Created NPM module abcd-1565303009156`
+
+`Cleaning up any leftover mess!`
+
 
 Have fun!
 
