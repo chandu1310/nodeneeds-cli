@@ -25,7 +25,7 @@ You must have installed nodejs on you machine, else [here](https://howtonode.org
 
 After you have installed node and npm on your machine, go ahead and install the nodeneeds tool by running the following command 
 
-`npm install nodeneeds -g`
+`npm install @chandu1310/nodeneeds -g`
 
 This install the nodeneeds tool as a command that you can invoke at your shell prompt.
 
