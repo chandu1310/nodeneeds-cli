@@ -11,4 +11,5 @@ export const startCli = () => checkPackageVersion()
   .then(createTempDir)
   .then(getLatestRelease)
   .then(extractFile)
-  .then(cleanUp);
+  .then(cleanUp)
+  .catch(cleanUp);

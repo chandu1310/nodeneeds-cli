@@ -26,20 +26,18 @@ export const extractFile = (details) => {
           const newFileName = `${process.cwd()}/${appname}/${fileName.substring(fileName.indexOf("/") + 1)}`;
           if( !fs.existsSync(newFileName) ){
             if( zipEntry.isDirectory ){
-              // console.log(`Creating directory: ${newFileName}`);
               fs.mkdirSync(newFileName);
             } else {
               let fileContent;
               fileContent = fileName.endsWith('package.json') ? customizePackageJSON(appname, zip.readAsText(fileName)) : zip.readAsText(fileName);
-              // console.log(`Creating new file: ${newFileName}`);
-              fs.writeFile(newFileName, fileContent, console.log);
+              fs.writeFile(newFileName, fileContent, () => {});
             }
           }
         }
         });
+        console.log(`Created NPM module ${appname}`);
         resolve(details);
     }catch(er){
-      // console.log(er);
       reject(er);
     }
   });
